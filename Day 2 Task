@@ -1,0 +1,204 @@
+1.Write a program to check whether a given string is a palindrome or not using for loop and if-else statement.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        input = input.replaceAll(" ", "").toLowerCase();
+
+        boolean Palindrome = true;
+
+        for (int i = 0; i < input.length() / 2; i++) {
+            if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
+                Palindrome = false;
+                break;
+            }
+        }
+
+        if (Palindrome) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+    }
+}
+
+Input: Rotator
+Output : Enter a string: The string is not a palindrome.
+
+2. Write a program that reads in a string from the user and uses a loop to reverse the onder of the characters in the string. Then, output the reversed string
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        String reversed = reverseString(input);
+
+        System.out.println("Reversed string: " + reversed);
+
+        scanner.close();
+    }
+
+    public static String reverseString(String input) {
+        int length = input.length();
+        StringBuilder reversed = new StringBuilder();
+
+        for (int i = length - 1; i >= 0; i--) {
+            reversed.append(input.charAt(i));
+        }
+
+        return reversed.toString();
+    }
+}
+
+
+Input: Race car
+Output: Enter a string: Reversed string: rac ecaR
+
+3. Write a program to print the given below pattern.
+
+Sample Input:
+4
+
+Sample Output:
+1
+
+2 3
+
+4 5 6
+
+7 8 9 10
+
+import java.util.Scanner;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("");
+        int numRows = scanner.nextInt();
+        scanner.close();
+
+        int num = 1;
+
+        for (int i = 1; i <= numRows; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(num + "  ");
+                num = (num % 10) + 1;
+            }
+            System.out.println();
+        }
+    }
+}
+
+Input 4 
+output 
+1  
+2  3  
+4  5  6  
+7  8  9  10  
+
+
+4. Write a program to print the given below pattern.
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 5;  // Number of rows
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (j == i || j == (n - i + 1)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+Output:
+*   *
+ * * 
+  *  
+ * * 
+*   *
+
+5.Grade
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+       int marks;
+        Scanner sc = new Scanner(System.in);
+        marks = sc.nextInt();
+        if(marks<50){
+            System.out.println("F");
+        }else if(marks>=50 && marks<=59){
+            System.out.println("E");
+        }else if(marks>=60 && marks<=69){
+            System.out.println("D");
+        }else if(marks>=70 && marks<=79){
+            System.out.println("C");
+        }else if(marks>=80 && marks<=89){
+            System.out.println("B");
+        }else if(marks>=90 && marks<=99){
+            System.out.println("A");
+        }else if(marks==100){
+            System.out.println("S");
+        }else{
+            System.out.println("Invalid");
+        }
+    }
+}
+
+Input 78
+Output C
+
+7.write a program to calculate the largest number three numbers
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        int number1 = input.nextInt();
+        System.out.print("Enter the second number: ");
+        int number2 = input.nextInt();
+        System.out.print("Enter the third number: ");
+        int number3 = input.nextInt();
+
+        int largestNumber;
+
+        if (number1 >= number2 && number1 >= number3) {
+            largestNumber = number1;
+        } else if (number2 >= number1 && number2 >= number3) {
+            largestNumber = number2;
+        } else {
+            largestNumber = number3;
+        }
+
+        System.out.println("The largest number is: " + largestNumber);
+
+    }
+}
+
+Input:
+10
+20
+30
+
+output
+The largest number is: 30
+
